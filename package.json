@@ -1,0 +1,45 @@
+{
+  "name": "upbit",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.5.1",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@types/react-chartjs-2": "^2.5.7",
+    "@types/websocket": "^1.0.5",
+    "axios": "^1.3.4",
+    "chart.js": "^4.2.1",
+    "chartjs-adapter-moment": "^1.0.1",
+    "chartjs-plugin-annotation": "^2.2.1",
+    "chartjs-plugin-datalabels": "^2.2.0",
+    "framer-motion": "^10.3.1",
+    "mobx": "^6.8.0",
+    "mobx-react": "^7.6.0",
+    "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-circular-progressbar": "^2.1.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.9.0",
+    "react-toastify": "^9.1.1",
+    "recharts": "^2.5.0",
+    "socket.io-client": "^4.6.1",
+    "styled-components": "^5.3.9",
+    "use-upbit-api": "^1.1.5",
+    "websocket": "^1.0.34"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0"
+  }
+}
