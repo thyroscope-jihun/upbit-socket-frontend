@@ -10,12 +10,13 @@ interface FlexProps extends ChakraFlexProps {
   h?: number | string;
   bc?: string;
   bor?: boolean;
+  fw?: boolean;
 }
 
 const Flex = (props: FlexProps) => {
   return (
     <CFlex
-      width={props.w ? props.w : undefined}
+      width={props.fw ? "100%" : props.w ? props.w : undefined}
       height={props.h ? props.h : undefined}
       justifyContent={props.c ? "center" : undefined}
       flexDirection={props.c ? "column" : undefined}

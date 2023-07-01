@@ -20,16 +20,21 @@ function App() {
         <BrowserRouter>
           <Routes>
             {pageRoutes.map(({ isPublic, path, element, ...rest }) => {
+              // const isAuthenticated = (g.jwt && !isPublic) || isPublic;
               const isAuthenticated = true;
               return (
                 <Route
                   key={path}
                   path={path}
                   element={
-                    <ProtectedRoute isAuthenticated={isAuthenticated}>
+                    <ProtectedRoute
+                      isAuthenticated={isAuthenticated as boolean}
+                    >
                       <div>
                         {!rest?.hideHeader && <Header />}
-                        <Container>{element}</Container>
+                        <Container hideHeader={rest.hideHeader as boolean}>
+                          {element}
+                        </Container>
                       </div>
                     </ProtectedRoute>
                   }
@@ -43,8 +48,8 @@ function App() {
   );
 }
 
-const Container = styled.div`
-  padding-top: 80px;
+const Container = styled.div<{ hideHeader: boolean }>`
+  padding-top: ${(props) => (props.hideHeader ? 0 : 80)}px;
 `;
 
 export default observer(App);

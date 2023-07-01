@@ -9,12 +9,21 @@ import marketsPresenter from "#presenters/market";
 let instance: GlobalStore | null;
 
 class GlobalStore {
+  jwt: string | null = null;
   presenters: IPresenters;
   repos = repos;
   constructor() {
     this.presenters = this.initPresenters();
-    makeObservable(this, {});
+    makeObservable(this, {
+      jwt: observable,
+    });
   }
+
+  setJwt = (jwt: string) => {
+    runInAction(() => {
+      this.jwt = jwt;
+    });
+  };
 
   private initPresenters(): IPresenters {
     const presenters: IPresenters = {
